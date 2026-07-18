@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Paul Gabriel</title>
+  <meta name="description" content="A showcase of sample projects built by Paul Gabriel." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Primary navigation">
+      <a href="index.html" class="brand">
+        <span class="brand-badge">PG</span>
+        Paul Gabriel
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="planner.html">Academic Planner</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container" style="grid-template-columns: 1fr;">
+        <div class="hero-text text-center">
+          <p class="eyebrow">Portfolio</p>
+          <h1>Projects I've Built</h1>
+          <p style="margin-inline: auto;">A sample of coursework and personal projects. Links are simulated for
+          demo purposes as this portfolio is a student term project.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="grid grid-3">
+        <article class="card project-card">
+          <img src="assets/images/project1.svg" alt="Screenshot of the Campus Event Finder web application interface" />
+          <div class="project-body">
+            <h3>Campus Event Finder</h3>
+            <p>A responsive web app concept that lets students discover, filter,
+            and RSVP to campus events by category and date.</p>
+            <ul class="tag-list">
+              <li class="tag">HTML5</li>
+              <li class="tag">CSS Grid</li>
+              <li class="tag">JavaScript</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://github.com/" target="_blank" rel="noopener" class="btn btn-outline btn-small">GitHub</a>
+              <a href="#" class="btn btn-primary btn-small">Live Demo (simulated)</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project-card">
+          <img src="assets/images/project2.svg" alt="Screenshot of the Grade Tracker dashboard interface" />
+          <div class="project-body">
+            <h3>Grade Tracker</h3>
+            <p>A dashboard concept for logging course scores and visualising
+            progress across a semester using simple bar charts built with CSS.</p>
+            <ul class="tag-list">
+              <li class="tag">HTML5</li>
+              <li class="tag">Flexbox</li>
+              <li class="tag">JavaScript Arrays</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://github.com/" target="_blank" rel="noopener" class="btn btn-outline btn-small">GitHub</a>
+              <a href="#" class="btn btn-primary btn-small">Live Demo (simulated)</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project-card">
+          <img src="assets/images/project3.svg" alt="Screenshot of the Study Group Finder matching interface" />
+          <div class="project-body">
+            <h3>Study Group Finder</h3>
+            <p>A concept tool that matches students into study groups based on
+            course and availability, with a clean card-based matching UI.</p>
+            <ul class="tag-list">
+              <li class="tag">HTML5</li>
+              <li class="tag">CSS Animations</li>
+              <li class="tag">DOM Manipulation</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://github.com/" target="_blank" rel="noopener" class="btn btn-outline btn-small">GitHub</a>
+              <a href="#" class="btn btn-primary btn-small">Live Demo (simulated)</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="media-block">
+        <h3>Project Demo Reel (Placeholder Video)</h3>
+        <p>A short video demonstrating HTML5 multimedia embedding for the projects showcase.</p>
+        <video controls poster="assets/images/project1.svg">
+          <source src="assets/video/demo.mp4" type="video/mp4" />
+          Your browser does not support the video element.
+        </video>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Paul Gabriel</h4>
+          <p>Software Engineering student, School of Computing, MIVA Open University.</p>
+        </div>
+        <div>
+          <h4>Site</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Me</a>
+          <a href="projects.html">Projects</a>
+          <a href="planner.html">Academic Planner</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <a href="mailto:p.gabriel5572@miva.edu.ng">p.gabriel5572@miva.edu.ng</a>
+          <a href="https://github.com/" target="_blank" rel="noopener">GitHub (simulated)</a>
+          <a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn (simulated)</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; <span id="current-year"></span> Paul Gabriel. Built for COS 106 &mdash; Introduction to Web Technologies.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

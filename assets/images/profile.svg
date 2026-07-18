@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-labelledby="title desc">
+  <title id="title">Paul Gabriel</title>
+  <desc id="desc">Profile avatar placeholder for Paul Gabriel</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#1e3a8a"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" rx="24" fill="url(#bg)"/>
+  <circle cx="200" cy="160" r="70" fill="#e0e7ff" opacity="0.9"/>
+  <path d="M80 340 C80 250 320 250 320 340 Z" fill="#e0e7ff" opacity="0.9"/>
+  <text x="200" y="200" font-family="Segoe UI, Arial, sans-serif" font-size="64" font-weight="700" fill="#1e3a8a" text-anchor="middle" dominant-baseline="middle">PG</text>
+</svg>

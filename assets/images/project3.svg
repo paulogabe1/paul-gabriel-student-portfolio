@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="600" height="360" role="img" aria-labelledby="t d">
+  <title id="t">Study Group Finder screenshot</title>
+  <desc id="d">Placeholder screenshot for the Study Group Finder project</desc>
+  <rect width="600" height="360" fill="#1e1b4b"/>
+  <rect x="0" y="0" width="600" height="48" fill="#312e81"/>
+  <circle cx="24" cy="24" r="6" fill="#ef4444"/>
+  <circle cx="44" cy="24" r="6" fill="#f59e0b"/>
+  <circle cx="64" cy="24" r="6" fill="#22c55e"/>
+  <rect x="40" y="80" width="200" height="24" rx="4" fill="#a78bfa"/>
+  <circle cx="90" cy="180" r="40" fill="#6d28d9"/>
+  <circle cx="180" cy="150" r="40" fill="#7c3aed"/>
+  <circle cx="270" cy="190" r="40" fill="#8b5cf6"/>
+  <circle cx="360" cy="150" r="40" fill="#a78bfa"/>
+  <circle cx="450" cy="185" r="40" fill="#c4b5fd"/>
+  <rect x="40" y="260" width="520" height="14" rx="4" fill="#4c1d95"/>
+  <rect x="40" y="284" width="380" height="14" rx="4" fill="#4c1d95"/>
+  <text x="300" y="340" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#c4b5fd" text-anchor="middle">Study Group Finder — matching preview</text>
+</svg>
