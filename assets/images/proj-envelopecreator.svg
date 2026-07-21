@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="600" height="360" role="img" aria-labelledby="t d">
+  <title id="t">EnvelopeCreator</title>
+  <desc id="d">JavaScript repository icon for the EnvelopeCreator project</desc>
+  <rect width="600" height="360" fill="#0f172a"/>
+  <rect x="0" y="0" width="600" height="48" fill="#1e293b"/>
+  <circle cx="24" cy="24" r="6" fill="#ef4444"/>
+  <circle cx="44" cy="24" r="6" fill="#f59e0b"/>
+  <circle cx="64" cy="24" r="6" fill="#22c55e"/>
+  <circle cx="300" cy="170" r="46" fill="#f7df1e"/>
+  <text x="300" y="182" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#0f172a" text-anchor="middle" font-weight="bold">JS</text>
+  <text x="300" y="250" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#e2e8f0" text-anchor="middle" font-weight="600">EnvelopeCreator</text>
+  <text x="300" y="278" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">Toon Boom Harmony plugin</text>
+</svg>

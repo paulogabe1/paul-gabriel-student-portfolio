@@ -267,6 +267,11 @@ ul {
   margin-bottom: 1.5rem;
 }
 
+.hero-text p a {
+  color: #fff;
+  text-decoration: underline;
+}
+
 .hero-actions {
   display: flex;
   gap: 1rem;

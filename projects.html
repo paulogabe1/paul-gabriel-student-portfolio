@@ -34,8 +34,9 @@
         <div class="hero-text text-center">
           <p class="eyebrow">Portfolio</p>
           <h1>Projects I've Built</h1>
-          <p style="margin-inline: auto;">A sample of coursework and personal projects. Links are simulated for
-          demo purposes as this portfolio is a student term project.</p>
+          <p style="margin-inline: auto;">A sample of real repositories from my
+          <a href="https://github.com/paulogabe1" target="_blank" rel="noopener">GitHub profile</a>,
+          spanning AI agents, game systems, and tooling.</p>
         </div>
       </div>
     </section>
@@ -43,67 +44,92 @@
     <section class="container">
       <div class="grid grid-3">
         <article class="card project-card">
-          <img src="assets/images/project1.svg" alt="Screenshot of the Campus Event Finder web application interface" />
+          <img src="assets/images/proj-content-transform-agent.svg" alt="content-transform-agent project icon" />
           <div class="project-body">
-            <h3>Campus Event Finder</h3>
-            <p>A responsive web app concept that lets students discover, filter,
-            and RSVP to campus events by category and date.</p>
+            <h3>Content Transformation Agent</h3>
+            <p>Turns raw technical material (docs, transcripts, YouTube videos) into a blog
+            draft and social posts using two chained LLM agents (CrewAI + Llama 3.3 70B) — one
+            extracts the core insight, the other writes it up.</p>
             <ul class="tag-list">
-              <li class="tag">HTML5</li>
-              <li class="tag">CSS Grid</li>
+              <li class="tag">Python</li>
+              <li class="tag">CrewAI</li>
+              <li class="tag">LLM Agents</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://github.com/paulogabe1/content-transform-agent" target="_blank" rel="noopener" class="btn btn-outline btn-small">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project-card">
+          <img src="assets/images/proj-growth-intel-agent.svg" alt="growth-intel-agent project icon" />
+          <div class="project-body">
+            <h3>Growth Intel Agent</h3>
+            <p>Bridges a web-research agent with the Content Transformation Agent: it
+            researches developments on a topic, saves the finding to Supabase, then feeds
+            it straight into a blog + social post draft.</p>
+            <ul class="tag-list">
+              <li class="tag">Python</li>
+              <li class="tag">Supabase</li>
+              <li class="tag">Agent Pipelines</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://github.com/paulogabe1/growth-intel-agent" target="_blank" rel="noopener" class="btn btn-outline btn-small">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project-card">
+          <img src="assets/images/proj-sharedcamerasystem.svg" alt="SharedCameraSystem project icon" />
+          <div class="project-body">
+            <h3>Dynamic Combat Shared Camera System</h3>
+            <p>A multi-target framing camera system built in Unreal Engine 5, inspired by
+            cinematic combat cameras in the <em>Naruto: Ultimate Ninja Storm</em> series —
+            keeps every fighter in frame and shifts into cinematic angles for special attacks.</p>
+            <ul class="tag-list">
+              <li class="tag">C++</li>
+              <li class="tag">Unreal Engine 5</li>
+              <li class="tag">Game Dev</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://github.com/paulogabe1/SharedCameraSystem" target="_blank" rel="noopener" class="btn btn-outline btn-small">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project-card">
+          <img src="assets/images/proj-speechiq-labeler.svg" alt="speechiq-labeler project icon" />
+          <div class="project-body">
+            <h3>SpeechIQ Labeler</h3>
+            <p>A React web app for labeling speech audio clips by speaking speed and
+            confidence, used to build a training dataset for a speech-analysis model.</p>
+            <ul class="tag-list">
+              <li class="tag">React</li>
+              <li class="tag">Vite</li>
+              <li class="tag">Data Labeling</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://github.com/paulogabe1/speechiq-labeler" target="_blank" rel="noopener" class="btn btn-outline btn-small">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project-card">
+          <img src="assets/images/proj-envelopecreator.svg" alt="EnvelopeCreator project icon" />
+          <div class="project-body">
+            <h3>Envelope Creator Expansion</h3>
+            <p>A plugin expansion for Toon Boom Harmony 24 that extends the animation
+            software's built-in Envelope Creator tool.</p>
+            <ul class="tag-list">
               <li class="tag">JavaScript</li>
+              <li class="tag">Toon Boom Harmony</li>
+              <li class="tag">Animation Tooling</li>
             </ul>
             <div class="project-links">
-              <a href="https://github.com/" target="_blank" rel="noopener" class="btn btn-outline btn-small">GitHub</a>
-              <a href="#" class="btn btn-primary btn-small">Live Demo (simulated)</a>
+              <a href="https://github.com/paulogabe1/EnvelopeCreator" target="_blank" rel="noopener" class="btn btn-outline btn-small">GitHub</a>
             </div>
           </div>
         </article>
-
-        <article class="card project-card">
-          <img src="assets/images/project2.svg" alt="Screenshot of the Grade Tracker dashboard interface" />
-          <div class="project-body">
-            <h3>Grade Tracker</h3>
-            <p>A dashboard concept for logging course scores and visualising
-            progress across a semester using simple bar charts built with CSS.</p>
-            <ul class="tag-list">
-              <li class="tag">HTML5</li>
-              <li class="tag">Flexbox</li>
-              <li class="tag">JavaScript Arrays</li>
-            </ul>
-            <div class="project-links">
-              <a href="https://github.com/" target="_blank" rel="noopener" class="btn btn-outline btn-small">GitHub</a>
-              <a href="#" class="btn btn-primary btn-small">Live Demo (simulated)</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card project-card">
-          <img src="assets/images/project3.svg" alt="Screenshot of the Study Group Finder matching interface" />
-          <div class="project-body">
-            <h3>Study Group Finder</h3>
-            <p>A concept tool that matches students into study groups based on
-            course and availability, with a clean card-based matching UI.</p>
-            <ul class="tag-list">
-              <li class="tag">HTML5</li>
-              <li class="tag">CSS Animations</li>
-              <li class="tag">DOM Manipulation</li>
-            </ul>
-            <div class="project-links">
-              <a href="https://github.com/" target="_blank" rel="noopener" class="btn btn-outline btn-small">GitHub</a>
-              <a href="#" class="btn btn-primary btn-small">Live Demo (simulated)</a>
-            </div>
-          </div>
-        </article>
-      </div>
-
-      <div class="media-block">
-        <h3>Project Demo Reel (Placeholder Video)</h3>
-        <p>A short video demonstrating HTML5 multimedia embedding for the projects showcase.</p>
-        <video controls poster="assets/images/project1.svg">
-          <source src="assets/video/demo.mp4" type="video/mp4" />
-          Your browser does not support the video element.
-        </video>
       </div>
     </section>
   </main>
@@ -126,7 +152,7 @@
         <div>
           <h4>Contact</h4>
           <a href="mailto:p.gabriel5572@miva.edu.ng">p.gabriel5572@miva.edu.ng</a>
-          <a href="https://github.com/" target="_blank" rel="noopener">GitHub (simulated)</a>
+          <a href="https://github.com/paulogabe1" target="_blank" rel="noopener">GitHub</a>
           <a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn (simulated)</a>
         </div>
       </div>
