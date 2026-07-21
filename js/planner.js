@@ -1,10 +1,12 @@
 // Academic Planner — interactive task management
-// Demonstrates: arrays, functions, event handling, DOM manipulation, dynamic content updates
+// Demonstrates: async/await, Supabase REST calls, event handling, DOM manipulation
 
-const STORAGE_KEY = "cos106-planner-tasks";
+const SUPABASE_URL = "https://eoqldzsqdoxfzvrkbbhf.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_pTE5Y2HfCYalXMlR5AtPHw_vN7lLNhk";
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-/** @type {{id: number, title: string, due: string, priority: string, completed: boolean}[]} */
-let tasks = loadTasks();
+/** @type {{id: number, title: string, due: string|null, priority: string, completed: boolean}[]} */
+let tasks = [];
 let currentFilter = "all";
 
 const taskForm = document.getElementById("task-form");
@@ -17,51 +19,70 @@ const statTotal = document.getElementById("stat-total");
 const statActive = document.getElementById("stat-active");
 const statCompleted = document.getElementById("stat-completed");
 
-function loadTasks() {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    return raw ? JSON.parse(raw) : defaultTasks();
-  } catch (err) {
-    return defaultTasks();
+async function loadTasks() {
+  taskList.innerHTML = "";
+  const loading = document.createElement("div");
+  loading.className = "empty-state";
+  loading.textContent = "Loading tasks…";
+  taskList.appendChild(loading);
+
+  const { data, error } = await supabaseClient
+    .from("tasks")
+    .select("*")
+    .order("created_at", { ascending: false });
+
+  if (error) {
+    renderError(error.message);
+    return;
   }
-}
 
-function defaultTasks() {
-  return [
-    { id: 1, title: "Submit COS 106 term project", due: "", priority: "high", completed: false },
-    { id: 2, title: "Review JavaScript DOM notes", due: "", priority: "medium", completed: false },
-    { id: 3, title: "Read Chapter 3 of course material", due: "", priority: "low", completed: true },
-  ];
-}
-
-function saveTasks() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
-}
-
-function addTask(title, due, priority) {
-  const newTask = {
-    id: Date.now(),
-    title: title.trim(),
-    due,
-    priority,
-    completed: false,
-  };
-  tasks = [newTask, ...tasks];
-  saveTasks();
+  tasks = data;
   renderTasks();
 }
 
-function toggleComplete(id) {
-  tasks = tasks.map((task) =>
-    task.id === id ? { ...task, completed: !task.completed } : task
-  );
-  saveTasks();
+async function addTask(title, due, priority) {
+  const { data, error } = await supabaseClient
+    .from("tasks")
+    .insert({ title: title.trim(), due: due || null, priority, completed: false })
+    .select()
+    .single();
+
+  if (error) {
+    renderError(error.message);
+    return;
+  }
+
+  tasks = [data, ...tasks];
   renderTasks();
 }
 
-function deleteTask(id) {
-  tasks = tasks.filter((task) => task.id !== id);
-  saveTasks();
+async function toggleComplete(id) {
+  const task = tasks.find((t) => t.id === id);
+  const { data, error } = await supabaseClient
+    .from("tasks")
+    .update({ completed: !task.completed })
+    .eq("id", id)
+    .select()
+    .single();
+
+  if (error) {
+    renderError(error.message);
+    return;
+  }
+
+  tasks = tasks.map((t) => (t.id === id ? data : t));
+  renderTasks();
+}
+
+async function deleteTask(id) {
+  const { error } = await supabaseClient.from("tasks").delete().eq("id", id);
+
+  if (error) {
+    renderError(error.message);
+    return;
+  }
+
+  tasks = tasks.filter((t) => t.id !== id);
   renderTasks();
 }
 
@@ -75,6 +96,14 @@ function formatDate(dateStr) {
   if (!dateStr) return "No due date";
   const date = new Date(dateStr + "T00:00:00");
   return date.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
+}
+
+function renderError(message) {
+  taskList.innerHTML = "";
+  const errorEl = document.createElement("div");
+  errorEl.className = "empty-state";
+  errorEl.textContent = `Couldn't reach the database: ${message}`;
+  taskList.appendChild(errorEl);
 }
 
 function renderTasks() {
@@ -150,12 +179,16 @@ function updateStats() {
   statActive.textContent = total - completed;
 }
 
-taskForm.addEventListener("submit", (event) => {
+taskForm.addEventListener("submit", async (event) => {
   event.preventDefault();
   const title = titleInput.value.trim();
   if (!title) return;
 
-  addTask(title, dueInput.value, priorityInput.value);
+  const submitBtn = taskForm.querySelector("button[type='submit']");
+  submitBtn.disabled = true;
+  await addTask(title, dueInput.value, priorityInput.value);
+  submitBtn.disabled = false;
+
   taskForm.reset();
   priorityInput.value = "medium";
   titleInput.focus();
@@ -170,4 +203,4 @@ filterButtons.forEach((btn) => {
   });
 });
 
-renderTasks();
+loadTasks();
